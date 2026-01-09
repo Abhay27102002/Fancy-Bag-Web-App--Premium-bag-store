@@ -1,3 +1,6 @@
+//This package will enable to use all variable from .env file
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
@@ -5,8 +8,7 @@ const path = require("path");
 const expressSession = require("express-session");
 const flash = require("connect-flash");
 
-//This package will enable to use all variable from .env file
-require("dotenv").config();
+
 
 const db = require("./config/mongoose-connection");
 const usersRouter = require("./routes/usersRouter");
@@ -42,4 +44,4 @@ app.use("/products",productsRouter);
 app.use("/", indexRouter);
 
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
