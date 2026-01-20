@@ -4,22 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fancy Bag | Future</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Optional: Smooth scrolling for the whole page */
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 
-<body class="font-['helvetica_now_display']">
-    <nav class="w-full flex justify-between px-5 py-3">
-        <h3 class="text-xl"><a href="/shop">Fancy Bag</a></h3>
+<body class="bg-black text-gray-200 font-sans selection:bg-cyan-500 selection:text-black">
+    
+    <nav class="fixed top-0 left-0 w-full flex justify-between px-10 py-5 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800 items-center">
+        
+        <h3 class="text-2xl font-black tracking-tighter uppercase relative group">
+            <a href="/shop" class="flex items-center gap-1 text-white hover:text-cyan-400 transition-colors duration-300">
+                <i class="ri-code-s-slash-line text-cyan-500 text-xl"></i>
+                
+                <span>FANCY<span class="text-cyan-500">BAG</span></span>
+                
+                <span class="hidden md:inline-block ml-2 text-[0.6rem] align-top bg-gray-900 border border-gray-700 text-gray-400 px-1 py-0.5 rounded font-mono tracking-widest group-hover:border-cyan-500/50 group-hover:text-cyan-400 transition-colors">
+                    SYS_V.2.0
+                </span>
+            </a>
+        </h3>
+
         <% var loggedin = typeof loggedin !== "undefined" ? loggedin : true %>
         <% if(loggedin){ %>
-            <div class="flex gap-5">
-                <a href="/shop">Shop</a>
-                <a href="/cart">Cart</a>
-                <a href="/account">My Account</a>
-                <a class="text-red-600" href="/users/logout">Logout</a>
+            <div class="flex items-center gap-8 font-mono text-xs md:text-sm">
+                <a class="text-gray-400 hover:text-white uppercase tracking-widest transition-all hover:shadow-[0_2px_0_0_#22d3ee]" href="/shop">
+                    // Shop
+                </a>
+                <a class="text-gray-400 hover:text-white uppercase tracking-widest transition-all hover:shadow-[0_2px_0_0_#22d3ee]" href="/cart">
+                    Cart
+                </a>
+                <a class="text-gray-400 hover:text-white uppercase tracking-widest transition-all hover:shadow-[0_2px_0_0_#22d3ee]" href="/account">
+                    Account
+                </a>
+                <a class="text-red-500 hover:text-red-400 hover:bg-red-500/10 px-3 py-1 border border-transparent hover:border-red-500/50 transition-all uppercase tracking-widest rounded-none" href="/users/logout">
+                    Logout <i class="ri-shut-down-line ml-1"></i>
+                </a>
             </div>
-        <% } %>           
-        
+        <% } %>          
     </nav>
+
+    <div class="h-20 w-full"></div>

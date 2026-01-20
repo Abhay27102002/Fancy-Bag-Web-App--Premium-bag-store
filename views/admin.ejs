@@ -1,113 +1,57 @@
 <%- include('./partials/header') %>
-    <div class="w-full h-screen flex items-start px-20 py-20">
-        <div class="w-[25%] flex h-screen flex-col items-start">
-            <div class="flex flex-col">
-                <a class="block w-fit mb-2" href="">All Products</a>
-                <a class="block w-fit mb-2" href="">Create new product</a>
+    <div class="w-full h-screen flex items-start px-10 py-10 bg-black text-gray-200 font-mono">
+        <div class="w-[20%] flex h-screen flex-col items-start border-r border-gray-800 pr-10">
+            <div class="flex flex-col w-full gap-4">
+                <div class="text-xl font-bold text-white mb-5 uppercase tracking-widest">Admin<span class="text-red-600">Core</span></div>
+                <a class="block w-full py-2 px-4 bg-gray-900 border-l-2 border-cyan-500 text-cyan-400" href="">Dashboard</a>
+                <a class="block w-full py-2 px-4 hover:bg-gray-900 hover:text-white text-gray-500 transition-colors" href="">All Products</a>
+                <a class="block w-full py-2 px-4 hover:bg-gray-900 hover:text-white text-gray-500 transition-colors" href="">Create New</a>
             </div>
         </div>
-        <div class="w-[75%] flex flex-col gap-5 h-screen">
-            <a class="text-red-500" href="">Delete all</a>
-            <div class="flex items-start gap-5">
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
+
+        <div class="w-[80%] flex flex-col gap-8 h-screen px-10 overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-5">
+                 <h2 class="text-2xl text-gray-400">Inventory Status</h2>
+                 <a class="text-red-500 border border-red-500/30 px-4 py-2 hover:bg-red-500/10 transition-colors text-xs uppercase" href="">
+                    <i class="ri-delete-bin-line mr-1"></i> Purge All Data
+                 </a>
             </div>
-            <div class="flex items-start gap-5">
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
+           
+            <div class="grid grid-cols-4 gap-6">
+                <% for(let i=0; i<4; i++) { %> 
+                <div class="bg-gray-900 border border-gray-700 hover:border-cyan-500 transition-all group">
+                    <div class="w-full h-40 bg-gray-800 relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat group-hover:transition-[background-position_0s] group-hover:duration-[1500ms] group-hover:ease-in-out group-hover:bg-[position:200%_0,0_0]"></div>
+                        <i class="ri-cube-line text-4xl text-gray-600 group-hover:text-cyan-400 transition-colors"></i>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-4 bg-black">
                         <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
+                            <h3 class="text-white text-sm font-bold">Clinge Bag</h3>
+                            <h4 class="text-cyan-500 text-xs mt-1">₹ 1200</h4>
                         </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
+                        <a class="w-8 h-8 flex items-center justify-center border border-gray-600 rounded-none text-gray-400 hover:text-white hover:bg-gray-800" href="">
                             <i class="ri-add-line"></i>
                         </a>
                     </div>
                 </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
+                <% } %>
+            </div>
+
+            <div class="grid grid-cols-4 gap-6">
+                <% for(let i=0; i<4; i++) { %> 
+                <div class="bg-gray-900 border border-gray-700 opacity-50 hover:opacity-100 transition-opacity">
+                    <div class="w-full h-40 bg-gray-800 flex items-center justify-center">
+                        <span class="text-xs text-gray-600">NO SIGNAL</span>
+                    </div>
+                     <div class="flex justify-between items-center px-4 py-4 bg-black">
                         <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
+                            <h3 class="text-gray-400 text-sm">Clinge Bag</h3>
+                            <h4 class="text-gray-600 text-xs">₹ 1200</h4>
                         </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
                     </div>
                 </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-60 bg-red-500">
-                    <div class="w-full h-52 bg-yellow-500"></div>
-                    <div class="flex justify-between items-center px-4 py-4">
-                        <div>
-                            <h3>Clinge Bag</h3>
-                            <h4>₹ 1200</h4>
-                        </div>
-                        <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
-                            <i class="ri-add-line"></i>
-                        </a>
-                    </div>
-                </div>
+                 <% } %>
             </div>
         </div>
     </div>
-    <%- include('./partials/footer') %>
+<%- include('./partials/footer') %>

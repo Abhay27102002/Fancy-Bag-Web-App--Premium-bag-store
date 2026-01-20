@@ -1,67 +1,73 @@
 <%- include('./partials/header') %>
 
 <% if(error.length>0){ %>
-    <div class="absolute top-5 left-1/2 -translate-x-1/2 z-50 p-4 rounded-lg bg-red-500 shadow-lg animate-bounce">
-        <span class="inline-block font-medium text-white tracking-wide">
-            <%= error %>
+    <div class="absolute top-5 left-1/2 -translate-x-1/2 z-50 p-4 rounded border border-red-500 bg-black/80 backdrop-blur-md shadow-[0_0_20px_rgba(239,68,68,0.5)]">
+        <span class="inline-block font-mono text-red-500 tracking-widest uppercase text-sm">
+            <i class="ri-error-warning-fill mr-2"></i><%= error %>
         </span>
     </div>
 <% } %>
 
-<div class="w-full min-h-screen flex flex-col md:flex-row font-sans">
+<div class="w-full min-h-screen flex flex-col md:flex-row font-sans bg-black text-gray-200 selection:bg-cyan-500 selection:text-black">
     
-    <div class="w-full md:w-1/2 flex items-center justify-center min-h-screen bg-zinc-900 text-white px-10 py-10 relative overflow-hidden">
-        
-        <div class="absolute -top-20 -left-20 w-64 h-64 bg-blue-500 rounded-full blur-[100px] opacity-20"></div>
+    <div class="w-full md:w-1/2 flex items-center justify-center min-h-screen bg-gray-900 relative overflow-hidden border-r border-gray-800">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-600/20 rounded-full blur-[100px]"></div>
 
-        <div class="w-full max-w-md z-10">
-            <h3 class="text-5xl font-bold tracking-tighter mb-2">Welcome to <span class="text-blue-500">Fancy Bag</span></h3>
-            <h4 class="text-xl text-zinc-400 mb-8 font-light">Join us to start your journey.</h4>
+        <div class="w-full max-w-md z-10 px-10">
+            <h3 class="text-6xl font-black tracking-tighter mb-2 text-white uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+                Fancy<span class="text-cyan-400">Bag</span><span class="text-xs align-top bg-gray-800 px-1 py-0.5 rounded text-gray-400 ml-2">V.2.0</span>
+            </h3>
+            <h4 class="text-lg text-gray-400 mb-10 font-mono border-l-2 border-cyan-500 pl-4">
+                Initialize your style sequence.
+            </h4>
             
-            <form autocomplete="off" action="/users/register" method="post" class="flex flex-col gap-4">
-                <div class="group">
+            <form autocomplete="off" action="/users/register" method="post" class="flex flex-col gap-5">
+                <div class="group relative">
                     <input
-                        class="bg-zinc-800 text-white block w-full px-5 py-3 border border-zinc-700 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-zinc-500"
-                        type="text" placeholder="Full Name" name="fullname">
+                        class="bg-black/50 text-white block w-full px-5 py-3 border border-gray-700 rounded-none focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all placeholder-gray-600 font-mono text-sm"
+                        type="text" placeholder="ID_FULLNAME" name="fullname">
                 </div>
                 <div>
                     <input
-                        class="bg-zinc-800 text-white block w-full px-5 py-3 border border-zinc-700 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-zinc-500"
-                        type="email" placeholder="Email Address" name="email">
+                        class="bg-black/50 text-white block w-full px-5 py-3 border border-gray-700 rounded-none focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all placeholder-gray-600 font-mono text-sm"
+                        type="email" placeholder="CONTACT_EMAIL" name="email">
                 </div>
                 <div>
                     <input
-                        class="bg-zinc-800 text-white block w-full px-5 py-3 border border-zinc-700 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-zinc-500"
-                        type="password" placeholder="Password" name="password">
+                        class="bg-black/50 text-white block w-full px-5 py-3 border border-gray-700 rounded-none focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all placeholder-gray-600 font-mono text-sm"
+                        type="password" placeholder="SECURE_PASSWORD" name="password">
                 </div>
                 
-                <input class="cursor-pointer w-full px-5 py-3 mt-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold tracking-wide transition-all shadow-lg hover:shadow-blue-500/30" 
+                <input class="cursor-pointer w-full px-5 py-3 mt-4 rounded-none bg-cyan-600 hover:bg-cyan-500 text-black font-bold tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] clipped-corner" 
                     type="submit"
-                    value="Create My Account">
+                    value="Execute Registration">
             </form>
         </div>
     </div>
 
-    <div class="w-full md:w-1/2 flex items-center justify-center min-h-screen bg-zinc-50 px-10 py-10">
-        <div class="w-full max-w-md">
-            <h4 class="text-3xl font-bold text-zinc-800 mb-2">Welcome Back</h4>
-            <p class="text-zinc-500 mb-8">Login to access your dashboard.</p>
+    <div class="w-full md:w-1/2 flex items-center justify-center min-h-screen bg-black relative">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none opacity-20"></div>
+
+        <div class="w-full max-w-md z-10 px-10">
+            <h4 class="text-3xl font-bold text-white mb-2 tracking-tight">System Login</h4>
+            <p class="text-gray-500 mb-8 font-mono text-xs uppercase tracking-widest">/// Awaiting Credentials ///</p>
             
             <form autocomplete="off" action="/users/login" method="post" class="flex flex-col gap-4">
                 <div>
                     <input
-                        class="bg-white block w-full px-5 py-3 border border-zinc-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-zinc-700 placeholder-zinc-400 shadow-sm"
-                        type="email" placeholder="Email" name="email">
+                        class="bg-gray-900/80 block w-full px-5 py-3 border border-gray-800 rounded-none focus:outline-none focus:border-purple-500 focus:text-purple-100 transition-all text-gray-300 placeholder-gray-700 font-mono text-sm"
+                        type="email" placeholder="EMAIL" name="email">
                 </div>
                 <div>
                     <input
-                        class="bg-white block w-full px-5 py-3 border border-zinc-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-zinc-700 placeholder-zinc-400 shadow-sm"
-                        type="password" placeholder="Password" name="password">
+                        class="bg-gray-900/80 block w-full px-5 py-3 border border-gray-800 rounded-none focus:outline-none focus:border-purple-500 focus:text-purple-100 transition-all text-gray-300 placeholder-gray-700 font-mono text-sm"
+                        type="password" placeholder="PASSWORD" name="password">
                 </div>
                 
-                <input class="cursor-pointer block w-full px-5 py-3 mt-4 rounded-full bg-zinc-800 hover:bg-black text-white font-semibold transition-all shadow-md" 
+                <input class="cursor-pointer block w-full px-5 py-3 mt-4 rounded-none border border-gray-600 hover:border-white hover:bg-white hover:text-black text-white font-semibold transition-all uppercase tracking-wider text-sm" 
                     type="submit"
-                    value="Login to Account">
+                    value="Access Dashboard">
             </form>
         </div>
     </div>
